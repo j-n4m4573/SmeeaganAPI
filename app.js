@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var Product = require('./models/product')
+var Product = require('./models/product');
 
 
 
@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
     res.json({message: 'Welcome to our API!'})
 })
 
-router.route('/prouducts')
+router.route('/products')
     .post(function(req, res) {
         var product = new Product()
         product.name = req.body.name;
@@ -59,9 +59,9 @@ router.route('/product/:product_id')
     .get(function(req, res) {
         Product.findById(req.params.product_id, function(err, product) {
             if (err) {
-                res.send(err)
+                res.send(err);
             }
-            res.json(product)
+            res.json(product);
         });
     });
 
@@ -69,15 +69,12 @@ router.route('/product/:photo')
     .get(function(req, res) {
         Product.find({photo:req.params.photo}, function(err, product) {
             if (err) {
-                res.send(err)
+                res.send(err);
             }
-            res.json(product)
+            res.json(product);
         });
-    }); 
+    });
 
-// app.listen(3000, () => {
-//   console.log('App listening on port 3000!')
-// })
 
 
 
