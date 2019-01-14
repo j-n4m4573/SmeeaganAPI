@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 3000;
 
 // mongoose.connect('mongodb://localhost:27017/SmeeaganAPI');
-mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost/rotten-potatoes');
+mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/SmeeaganAPI');
 
 var router = express.Router();
 // Routes fixed with api prefix

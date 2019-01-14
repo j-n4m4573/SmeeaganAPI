@@ -7,4 +7,4 @@ var ProductSchema = new Schema ({
     photo: String
 })
 
-module.exports = mongoose.model('Product', ProductSchema) 
+module.exports = mongoose.model('Product', ProductSchema)
