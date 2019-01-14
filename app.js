@@ -34,10 +34,13 @@ router.get('/', (req, res) => {
 
 router.route('/products')
     .post(function(req, res) {
+
         var product = new Product()
         product.name = req.body.name;
         product.id = req.body.id;
         product.photo = req.body.photo;
+
+        res.json(product);
 
         product.save(function(err) {
             if (err) {
