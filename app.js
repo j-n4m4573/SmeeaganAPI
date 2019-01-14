@@ -44,7 +44,8 @@ router.route('/products')
             if (err) {
                 res.send(err);
             }
-            res.json({message: "Product was successfully created"});
+            res.json(req.body)
+            // res.json({message: "Product was successfully created"});
         });
     })
 
