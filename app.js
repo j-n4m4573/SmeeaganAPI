@@ -39,13 +39,15 @@ router.route('/products')
         product.name = req.body.name;
         product.id = req.body.id;
         product.photo = req.body.photo;
+        product.type = req.body.type;
+        product.category = req.body.category;
 
         product.save(function(err) {
             if (err) {
                 res.send(err);
             }
-            res.json(req.body)
-            // res.json({message: "Product was successfully created"});
+            // res.json(req.body)
+            res.json({message: "Product was successfully created"});
         });
     })
 
@@ -68,7 +70,7 @@ router.route('/product/:product_id')
         });
     });
 
-router.route('/product/:photo')
+router.route('/product/photo/:photo')
     .get(function(req, res) {
         Product.find({photo:req.params.photo}, function(err, product) {
             if (err) {
@@ -77,6 +79,16 @@ router.route('/product/:photo')
             res.json(product);
         });
     });
+
+    router.route('/product/category/:category')
+        .get(function(req, res) {
+            Product.find({category:req.params.category}, function(err, product) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(product);
+            });
+        });
 
 
 
