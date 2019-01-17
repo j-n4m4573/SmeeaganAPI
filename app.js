@@ -37,7 +37,7 @@ router.route('/products')
 
         var product = new Product()
             product.product_name = req.body.product_name;
-            product.product_id = req.body.product_id;
+            product.brand_id = req.body.brand_id;
             product.photo = req.body.photo;
             product.type = req.body.type;
             product.category = req.body.category;
