@@ -36,11 +36,11 @@ router.route('/products')
     .post(function(req, res) {
 
         var product = new Product()
-        product.name = req.body.name;
-        product.id = req.body.id;
-        product.photo = req.body.photo;
-        product.type = req.body.type;
-        product.category = req.body.category;
+            product.product_name = req.body.product_name;
+            product.product_id = req.body.product_id;
+            product.photo = req.body.photo;
+            product.type = req.body.type;
+            product.category = req.body.category;
 
         product.save(function(err) {
             if (err) {
