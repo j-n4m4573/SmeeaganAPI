@@ -16,10 +16,12 @@ var port = process.env.PORT || 3000;
 mongoose.connect(process.env.MONGODB_URI ||'mongodb://localhost:27017/SmeeaganAPI');
 
 var router = express.Router();
-// Routes fixed with api prefix
+
+// Routes fixed with API prefix
 app.use('/api', router);
 
 // Middleware
+
 // middleware to use for all requests
 router.use(function(req, res, next) {
 
@@ -32,6 +34,7 @@ router.get('/', (req, res) => {
     res.json({message: 'Welcome to our API!'})
 })
 
+//
 router.route('/products')
     .post(function(req, res) {
 
